@@ -40,7 +40,7 @@ export default function GallerySection() {
                 Prepare, Practice &amp; Persist.
               </span>
             </p>
-            <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed font-light">
+            <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-white/95 max-w-2xl leading-relaxed font-light drop-shadow-[0_2px_16px_rgba(0,0,0,0.8)]">
               Step into live sessions, real charts, and a community of traders building their edge with AI — not guesswork.
             </p>
           </div>

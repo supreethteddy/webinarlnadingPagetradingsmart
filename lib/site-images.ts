@@ -1,4 +1,6 @@
 export const SITE_IMAGES = {
+  galleryBanner:
+    'https://res.cloudinary.com/dij4v6vtx/image/upload/v1778846245/ExtraMile_Play_Raises_USD_500K_Seed_Round_to_Scale_Its_Gamified_Employee_Engagement_Platform_l5kszu.jpg',
   traderAtHome:
     'https://res.cloudinary.com/dij4v6vtx/image/upload/v1778844719/trading_rqwchw.jpg',
   tradingLounge:
