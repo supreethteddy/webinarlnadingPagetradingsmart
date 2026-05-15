@@ -17,8 +17,8 @@ export default function GallerySection() {
           className="max-w-7xl mx-auto relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[620px] rounded-3xl overflow-hidden border border-white/[0.1] shadow-[0_0_80px_rgba(6,182,212,0.12)] bg-[#040816]"
         >
           <Image
-            src={SITE_IMAGES.tradingEvent}
-            alt="Packed trading seminar with live market charts on screen"
+            src={SITE_IMAGES.galleryBanner}
+            alt="TradingSmart.ai community celebrating together on a live group call"
             fill
             priority
             unoptimized
@@ -26,15 +26,15 @@ export default function GallerySection() {
             className="object-cover object-center"
           />
 
-          {/* Dark overlays — keeps text readable on bright venue photos */}
-          <div className="absolute inset-0 bg-[#040816]/60" aria-hidden />
+          {/* 20% dark fade — image stays bright and visible */}
+          <div className="absolute inset-0 bg-[#040816]/20" aria-hidden />
           <div
-            className="absolute inset-0 bg-gradient-to-t from-[#040816] via-[#040816]/55 to-[#040816]/45"
+            className="absolute inset-0 bg-gradient-to-t from-[#040816]/50 via-[#040816]/15 to-[#040816]/25"
             aria-hidden
           />
 
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 sm:px-12 md:px-20">
-            <p className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight max-w-4xl">
+            <p className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight max-w-4xl drop-shadow-[0_2px_24px_rgba(0,0,0,0.85)]">
               The Market Rewards Those Who{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
                 Prepare, Practice &amp; Persist.
