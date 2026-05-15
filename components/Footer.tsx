@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { Send } from 'lucide-react';
+import Image from "next/image";
+import { Send } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative py-12 border-t border-white/[0.06] overflow-hidden">
+    <footer className="relative py-12 border-t border-cyan-500/10 overflow-hidden">
       <div className="absolute inset-0 bg-[#040816]" />
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-20">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { motionInitial } from '@/components/motion';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { motionInitial } from "@/components/motion";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -12,29 +12,27 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: "smooth" });
       setMobileOpen(false);
     }
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setMobileOpen(false);
   };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-[#040816]/80 backdrop-blur-xl border-b border-white/5'
-          : 'bg-transparent'
+        scrolled ? "bg-[#040816]/80 border-b border-white/5" : "bg-transparent"
       }`}
     >
       <div className="w-full px-6 md:px-12 lg:px-20 py-4 flex items-center justify-between">
@@ -55,11 +53,11 @@ export default function Header() {
         </button>
         <nav className="hidden md:flex items-center gap-8">
           {[
-            { label: 'Gallery', id: 'gallery' },
-            { label: 'Features', id: 'features' },
-            { label: 'Workshop', id: 'workshop' },
-            { label: 'Community', id: 'community' },
-            { label: 'Register', id: 'register' },
+            { label: "Gallery", id: "gallery" },
+            { label: "Features", id: "features" },
+            { label: "Workshop", id: "workshop" },
+            { label: "Community", id: "community" },
+            { label: "Register", id: "register" },
           ].map((item) => (
             <button
               key={item.id}
@@ -72,7 +70,7 @@ export default function Header() {
         </nav>
         <div className="hidden md:flex items-center gap-4">
           <button
-            onClick={() => scrollTo('register')}
+            onClick={() => scrollTo("register")}
             className="px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 whitespace-nowrap"
           >
             Join Workshop
@@ -89,14 +87,14 @@ export default function Header() {
         <motion.div
           initial={motionInitial}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-[#040816]/95 backdrop-blur-xl border-t border-white/5 px-6 py-6 space-y-4"
+          className="md:hidden bg-[#040816]/95 border-t border-white/5 px-6 py-6 space-y-4"
         >
           {[
-            { label: 'Gallery', id: 'gallery' },
-            { label: 'Features', id: 'features' },
-            { label: 'Workshop', id: 'workshop' },
-            { label: 'Community', id: 'community' },
-            { label: 'Register', id: 'register' },
+            { label: "Gallery", id: "gallery" },
+            { label: "Features", id: "features" },
+            { label: "Workshop", id: "workshop" },
+            { label: "Community", id: "community" },
+            { label: "Register", id: "register" },
           ].map((item) => (
             <button
               key={item.id}

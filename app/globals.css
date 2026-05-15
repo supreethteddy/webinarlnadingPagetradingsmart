@@ -1,4 +1,4 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,11 +6,16 @@
 @layer base {
   html {
     background-color: #040816;
+    color-scheme: dark;
   }
 
   body {
     background-color: #040816;
     color: #ffffff;
+  }
+
+  main {
+    background-color: #040816;
   }
 }
 

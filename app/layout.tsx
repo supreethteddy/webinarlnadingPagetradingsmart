@@ -20,7 +20,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "TradingSmart.ai — AI Trading Education",
-  description: "Learn Trading in the AI Era. Master market structure, AI workflows, option chains, and risk management with our 3-day premium workshop.",
+  description:
+    "Learn Trading in the AI Era. Master market structure, AI workflows, option chains, and risk management with our 3-day premium workshop.",
 };
 
 export const viewport = {
@@ -34,9 +35,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-[#040816]" suppressHydrationWarning={true}>
+    <html
+      lang="en"
+      className="bg-[#040816]"
+      style={{ backgroundColor: "#040816" }}
+      suppressHydrationWarning={true}
+    >
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased bg-[#040816] text-white min-h-screen`}
+        style={{ backgroundColor: "#040816", color: "#ffffff" }}
       >
         {children}
       </body>

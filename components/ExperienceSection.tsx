@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { motionInitial } from '@/components/motion';
-import { CheckCircle2 } from 'lucide-react';
-import { EXPERIENCE_STORIES } from '@/lib/site-images';
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { motionInitial } from "@/components/motion";
+import { CheckCircle2 } from "lucide-react";
+import { EXPERIENCE_STORIES } from "@/lib/site-images";
 
 export default function ExperienceSection() {
   return (
@@ -18,15 +18,15 @@ export default function ExperienceSection() {
               key={story.title}
               initial={motionInitial}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
+              viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7 }}
               className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
-                'reverse' in story && story.reverse
-                  ? 'lg:[&>*:first-child]:order-2'
-                  : ''
+                "reverse" in story && story.reverse
+                  ? "lg:[&>*:first-child]:order-2"
+                  : ""
               }`}
             >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/[0.08] shadow-[0_0_60px_rgba(6,182,212,0.12)]">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-cyan-500/15 shadow-[0_0_60px_rgba(6,182,212,0.12)]">
                 <Image
                   src={story.image}
                   alt={story.alt}
@@ -50,8 +50,14 @@ export default function ExperienceSection() {
                 </p>
                 <ul className="space-y-3">
                   {story.highlights.map((point) => (
-                    <li key={point} className="flex items-center gap-3 text-gray-300">
-                      <CheckCircle2 size={20} className="text-cyan-400 shrink-0" />
+                    <li
+                      key={point}
+                      className="flex items-center gap-3 text-gray-300"
+                    >
+                      <CheckCircle2
+                        size={20}
+                        className="text-cyan-400 shrink-0"
+                      />
                       {point}
                     </li>
                   ))}

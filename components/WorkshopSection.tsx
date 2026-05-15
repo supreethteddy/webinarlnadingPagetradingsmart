@@ -1,38 +1,43 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { motionInitial } from '@/components/motion';
-import { CheckCircle2, Lightbulb, Brain, MessageSquareText } from 'lucide-react';
-import { SITE_IMAGES } from '@/lib/site-images';
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { motionInitial } from "@/components/motion";
+import {
+  CheckCircle2,
+  Lightbulb,
+  Brain,
+  MessageSquareText,
+} from "lucide-react";
+import { SITE_IMAGES } from "@/lib/site-images";
 
 const days = [
   {
-    day: 'DAY 1',
-    title: 'Foundation & Mindset',
+    day: "DAY 1",
+    title: "Foundation & Mindset",
     icon: Lightbulb,
-    items: ['Market Structure', 'Trading Psychology', 'Risk Management'],
-    color: 'from-cyan-500/20 to-blue-500/20',
-    border: 'border-cyan-500/20',
-    iconColor: 'text-cyan-400',
+    items: ["Market Structure", "Trading Psychology", "Risk Management"],
+    color: "from-cyan-500/20 to-blue-500/20",
+    border: "border-cyan-500/20",
+    iconColor: "text-cyan-400",
   },
   {
-    day: 'DAY 2',
-    title: 'AI Tools & Simulations',
+    day: "DAY 2",
+    title: "AI Tools & Simulations",
     icon: Brain,
-    items: ['AI-assisted Trading', 'ChatGPT for Trading', 'Live Simulations'],
-    color: 'from-blue-500/20 to-violet-500/20',
-    border: 'border-blue-500/20',
-    iconColor: 'text-blue-400',
+    items: ["AI-assisted Trading", "ChatGPT for Trading", "Live Simulations"],
+    color: "from-blue-500/20 to-violet-500/20",
+    border: "border-blue-500/20",
+    iconColor: "text-blue-400",
   },
   {
-    day: 'DAY 3',
-    title: 'Systems & Community',
+    day: "DAY 3",
+    title: "Systems & Community",
     icon: MessageSquareText,
-    items: ['Trading Workflows', 'AI Systems Setup', 'Q&A + Community Access'],
-    color: 'from-violet-500/20 to-cyan-500/20',
-    border: 'border-violet-500/20',
-    iconColor: 'text-violet-400',
+    items: ["Trading Workflows", "AI Systems Setup", "Q&A + Community Access"],
+    color: "from-violet-500/20 to-cyan-500/20",
+    border: "border-violet-500/20",
+    iconColor: "text-violet-400",
   },
 ];
 
@@ -58,7 +63,8 @@ export default function WorkshopSection() {
               Workshop Breakdown
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              A carefully structured 3-day journey from market fundamentals to building your own AI-powered trading system.
+              A carefully structured 3-day journey from market fundamentals to
+              building your own AI-powered trading system.
             </p>
           </motion.div>
 
@@ -69,7 +75,7 @@ export default function WorkshopSection() {
             transition={{ duration: 0.6 }}
             className="grid lg:grid-cols-2 gap-8 mb-14"
           >
-            <motion.div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-white/[0.08]">
+            <motion.div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-cyan-500/15">
               <Image
                 src={SITE_IMAGES.classroom}
                 alt="Interactive classroom workshop with instructor"
@@ -82,7 +88,7 @@ export default function WorkshopSection() {
                 Day-by-day classroom sessions with live Q&A
               </p>
             </motion.div>
-            <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-white/[0.08]">
+            <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-cyan-500/15">
               <Image
                 src={SITE_IMAGES.forexDemo}
                 alt="Demo account trading practice with mentor"
@@ -103,24 +109,34 @@ export default function WorkshopSection() {
                 key={d.day}
                 initial={motionInitial}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                className={`relative p-8 rounded-2xl bg-gradient-to-br ${d.color} backdrop-blur-xl border ${d.border} hover:shadow-[0_0_40px_rgba(6,182,212,0.12)] transition-all duration-500`}
+                className={`relative p-8 rounded-2xl bg-gradient-to-br ${d.color} border ${d.border} hover:shadow-[0_0_40px_rgba(6,182,212,0.12)] transition-all duration-500`}
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
                     <d.icon size={22} className={d.iconColor} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-gray-500 tracking-wider">{d.day}</div>
-                    <div className="text-lg font-semibold text-white">{d.title}</div>
+                    <div className="text-xs font-bold text-gray-500 tracking-wider">
+                      {d.day}
+                    </div>
+                    <div className="text-lg font-semibold text-white">
+                      {d.title}
+                    </div>
                   </div>
                 </div>
                 <ul className="space-y-4">
                   {d.items.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-gray-300 text-sm">
-                      <CheckCircle2 size={18} className="text-cyan-400 shrink-0" />
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-gray-300 text-sm"
+                    >
+                      <CheckCircle2
+                        size={18}
+                        className="text-cyan-400 shrink-0"
+                      />
                       {item}
                     </li>
                   ))}

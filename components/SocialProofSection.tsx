@@ -1,33 +1,33 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { motionInitial } from '@/components/motion';
-import { TrendingUp, Globe, Radio, Layers } from 'lucide-react';
+import { motion } from "framer-motion";
+import { motionInitial } from "@/components/motion";
+import { TrendingUp, Globe, Radio, Layers } from "lucide-react";
 
 const proofs = [
   {
     icon: TrendingUp,
-    stat: '2,400+',
-    label: 'Traders Learning with AI',
-    desc: 'From beginners to seasoned professionals upgrading their edge.',
+    stat: "2,400+",
+    label: "Traders Learning with AI",
+    desc: "From beginners to seasoned professionals upgrading their edge.",
   },
   {
     icon: Globe,
-    stat: '40+',
-    label: 'Countries Represented',
-    desc: 'A truly global community of AI-powered traders.',
+    stat: "40+",
+    label: "Countries Represented",
+    desc: "A truly global community of AI-powered traders.",
   },
   {
     icon: Radio,
-    stat: '12,000+',
-    label: 'Webinar Minutes Watched',
-    desc: 'Deep-dive sessions packed with actionable AI trading insights.',
+    stat: "12,000+",
+    label: "Webinar Minutes Watched",
+    desc: "Deep-dive sessions packed with actionable AI trading insights.",
   },
   {
     icon: Layers,
-    stat: '96%',
-    label: 'Satisfaction Rate',
-    desc: 'Attendees rate the workshop as transformative for their trading.',
+    stat: "96%",
+    label: "Satisfaction Rate",
+    desc: "Attendees rate the workshop as transformative for their trading.",
   },
 ];
 
@@ -63,9 +63,9 @@ export default function SocialProofSection() {
                 key={p.label}
                 initial={motionInitial}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="group relative p-7 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] hover:border-cyan-500/20 transition-all duration-500 text-center"
+                className="group relative p-7 rounded-2xl bg-[#0a0f24]/90 border border-cyan-500/10 hover:border-cyan-500/20 transition-all duration-500 text-center"
               >
                 <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300">
                   <p.icon size={22} className="text-cyan-400" />
@@ -73,8 +73,12 @@ export default function SocialProofSection() {
                 <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">
                   {p.stat}
                 </div>
-                <div className="text-white font-medium text-sm mb-2">{p.label}</div>
-                <div className="text-gray-500 text-xs leading-relaxed">{p.desc}</div>
+                <div className="text-white font-medium text-sm mb-2">
+                  {p.label}
+                </div>
+                <div className="text-gray-500 text-xs leading-relaxed">
+                  {p.desc}
+                </div>
               </motion.div>
             ))}
           </div>

@@ -1,45 +1,53 @@
-'use client';
+"use client";
 
-import { useState, type FormEvent } from 'react';
-import { motion } from 'framer-motion';
-import { motionInitial } from '@/components/motion';
-import { Send, User, Mail, Phone, MessageSquare, CheckCircle2, Loader2 } from 'lucide-react';
+import { useState, type FormEvent } from "react";
+import { motion } from "framer-motion";
+import { motionInitial } from "@/components/motion";
+import {
+  Send,
+  User,
+  Mail,
+  Phone,
+  MessageSquare,
+  CheckCircle2,
+  Loader2,
+} from "lucide-react";
 
 const WEB3FORMS_ACCESS_KEY =
   process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ??
-  '450f3c03-489f-4ad0-bd5d-5fa162b5f0ac';
+  "450f3c03-489f-4ad0-bd5d-5fa162b5f0ac";
 
 export default function RegistrationSection() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    whatsapp: '',
-    message: '',
+    name: "",
+    email: "",
+    whatsapp: "",
+    message: "",
   });
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           name: formData.name,
           email: formData.email,
           phone: formData.whatsapp,
-          message: formData.message || '—',
-          subject: 'TradingSmart.ai — Workshop Registration',
-          from_name: 'TradingSmart.ai Website',
+          message: formData.message || "—",
+          subject: "TradingSmart.ai — Workshop Registration",
+          from_name: "TradingSmart.ai Website",
         }),
       });
 
@@ -48,10 +56,10 @@ export default function RegistrationSection() {
       if (result.success) {
         setSubmitted(true);
       } else {
-        setError(result.message || 'Submission failed. Please try again.');
+        setError(result.message || "Submission failed. Please try again.");
       }
     } catch {
-      setError('Unable to submit. Check your connection and try again.');
+      setError("Unable to submit. Check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -79,7 +87,8 @@ export default function RegistrationSection() {
               Register For The Workshop
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Secure your spot in the next cohort. Join thousands of traders already transforming their approach with AI.
+              Secure your spot in the next cohort. Join thousands of traders
+              already transforming their approach with AI.
             </p>
           </motion.div>
 
@@ -88,7 +97,7 @@ export default function RegistrationSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative p-8 md:p-12 rounded-3xl bg-white/[0.02] backdrop-blur-2xl border border-white/[0.08] overflow-hidden"
+            className="relative p-8 md:p-12 rounded-3xl bg-[#0a0f24]/90 border border-cyan-500/15 overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-72 h-72 bg-cyan-500/8 rounded-full blur-[80px]" />
             <div className="absolute bottom-0 left-0 w-56 h-56 bg-blue-600/8 rounded-full blur-[60px]" />
@@ -102,19 +111,22 @@ export default function RegistrationSection() {
                 <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mb-6">
                   <CheckCircle2 size={32} className="text-emerald-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Registration Confirmed!</h3>
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  Registration Confirmed!
+                </h3>
                 <p className="text-gray-400 max-w-md">
-                  Thank you for registering. We will contact you on WhatsApp and email with workshop details.
+                  Thank you for registering. We will contact you on WhatsApp and
+                  email with workshop details.
                 </p>
               </motion.div>
             ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="relative z-10 space-y-6"
-              >
+              <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm text-gray-400 flex items-center gap-2">
+                    <label
+                      htmlFor="name"
+                      className="text-sm text-gray-400 flex items-center gap-2"
+                    >
                       <User size={14} className="text-cyan-400" />
                       Full Name
                     </label>
@@ -124,13 +136,18 @@ export default function RegistrationSection() {
                       name="name"
                       required
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-5 py-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300"
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      className="w-full px-5 py-3.5 rounded-xl bg-[#061024] border border-cyan-500/15 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300"
                       placeholder="John Doe"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm text-gray-400 flex items-center gap-2">
+                    <label
+                      htmlFor="email"
+                      className="text-sm text-gray-400 flex items-center gap-2"
+                    >
                       <Mail size={14} className="text-cyan-400" />
                       Email Address
                     </label>
@@ -140,14 +157,19 @@ export default function RegistrationSection() {
                       name="email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-5 py-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300"
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      className="w-full px-5 py-3.5 rounded-xl bg-[#061024] border border-cyan-500/15 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm text-gray-400 flex items-center gap-2">
+                  <label
+                    htmlFor="phone"
+                    className="text-sm text-gray-400 flex items-center gap-2"
+                  >
                     <Phone size={14} className="text-cyan-400" />
                     WhatsApp Number
                   </label>
@@ -162,12 +184,15 @@ export default function RegistrationSection() {
                     onChange={(e) =>
                       setFormData({ ...formData, whatsapp: e.target.value })
                     }
-                    className="w-full px-5 py-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300"
+                    className="w-full px-5 py-3.5 rounded-xl bg-[#061024] border border-cyan-500/15 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300"
                     placeholder="+91 98765 43210"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm text-gray-400 flex items-center gap-2">
+                  <label
+                    htmlFor="message"
+                    className="text-sm text-gray-400 flex items-center gap-2"
+                  >
                     <MessageSquare size={14} className="text-cyan-400" />
                     Message (Optional)
                   </label>
@@ -177,8 +202,10 @@ export default function RegistrationSection() {
                     rows={4}
                     maxLength={500}
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-5 py-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300 resize-none"
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    className="w-full px-5 py-3.5 rounded-xl bg-[#061024] border border-cyan-500/15 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300 resize-none"
                     placeholder="Tell us about your trading experience or goals..."
                   />
                   <div className="text-xs text-gray-500 text-right">

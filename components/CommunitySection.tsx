@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { motionInitial } from '@/components/motion';
-import { Zap, Bell, Users, Sparkles } from 'lucide-react';
-import JoinTelegramButton from '@/components/JoinTelegramButton';
-import { SITE_IMAGES } from '@/lib/site-images';
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { motionInitial } from "@/components/motion";
+import { Zap, Bell, Users, Sparkles } from "lucide-react";
+import JoinTelegramButton from "@/components/JoinTelegramButton";
+import { SITE_IMAGES } from "@/lib/site-images";
 
 const benefits = [
-  { icon: Zap, text: 'Daily AI Market Insights' },
-  { icon: Bell, text: 'Real-time Trade Alerts' },
-  { icon: Users, text: 'Network with 2,400+ Traders' },
-  { icon: Sparkles, text: 'Exclusive AI Tool Access' },
+  { icon: Zap, text: "Daily AI Market Insights" },
+  { icon: Bell, text: "Real-time Trade Alerts" },
+  { icon: Users, text: "Network with 2,400+ Traders" },
+  { icon: Sparkles, text: "Exclusive AI Tool Access" },
 ];
 
 export default function CommunitySection() {
@@ -36,7 +36,8 @@ export default function CommunitySection() {
               Live Telegram Community
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Connect with thousands of AI-curious traders. Get daily signals, share strategies, and grow together.
+              Connect with thousands of AI-curious traders. Get daily signals,
+              share strategies, and grow together.
             </p>
           </motion.div>
 
@@ -45,7 +46,7 @@ export default function CommunitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative rounded-3xl bg-white/[0.02] backdrop-blur-2xl border border-white/[0.08] hover:border-cyan-500/25 transition-all duration-500 overflow-hidden"
+            className="relative rounded-3xl bg-[#0a0f24]/90 border border-cyan-500/15 hover:border-cyan-500/25 transition-all duration-500 overflow-hidden"
           >
             <div className="grid lg:grid-cols-2">
               <div className="relative min-h-[280px] lg:min-h-[420px]">
@@ -66,17 +67,24 @@ export default function CommunitySection() {
                   TradingSmart.ai Community
                 </h3>
                 <p className="text-gray-400 mb-8 leading-relaxed">
-                  Meet traders who think like you — ambitious, curious, and ready to use AI as an edge in the markets.
+                  Meet traders who think like you — ambitious, curious, and
+                  ready to use AI as an edge in the markets.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                   {benefits.map((b) => (
-                    <div key={b.text} className="flex items-center gap-2 text-gray-400 text-sm">
+                    <div
+                      key={b.text}
+                      className="flex items-center gap-2 text-gray-400 text-sm"
+                    >
                       <b.icon size={16} className="text-cyan-400 shrink-0" />
                       {b.text}
                     </div>
                   ))}
                 </div>
-                <JoinTelegramButton label="Join Telegram Now" variant="filled" />
+                <JoinTelegramButton
+                  label="Join Telegram Now"
+                  variant="filled"
+                />
               </div>
             </div>
           </motion.div>
