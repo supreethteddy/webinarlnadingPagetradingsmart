@@ -55,6 +55,7 @@ export default function Header() {
         </button>
         <nav className="hidden md:flex items-center gap-8">
           {[
+            { label: 'Gallery', id: 'gallery' },
             { label: 'Features', id: 'features' },
             { label: 'Workshop', id: 'workshop' },
             { label: 'Community', id: 'community' },
@@ -91,6 +92,7 @@ export default function Header() {
           className="md:hidden bg-[#040816]/95 backdrop-blur-xl border-t border-white/5 px-6 py-6 space-y-4"
         >
           {[
+            { label: 'Gallery', id: 'gallery' },
             { label: 'Features', id: 'features' },
             { label: 'Workshop', id: 'workshop' },
             { label: 'Community', id: 'community' },

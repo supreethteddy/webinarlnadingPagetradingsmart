@@ -1,9 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { motionInitial } from '@/components/motion';
-import { Send, Zap, Bell, Users, Sparkles } from 'lucide-react';
+import { Zap, Bell, Users, Sparkles } from 'lucide-react';
 import JoinTelegramButton from '@/components/JoinTelegramButton';
+import { SITE_IMAGES } from '@/lib/site-images';
 
 const benefits = [
   { icon: Zap, text: 'Daily AI Market Insights' },
@@ -19,7 +21,7 @@ export default function CommunitySection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-500/5 rounded-full blur-[180px]" />
 
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-20">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={motionInitial}
             whileInView={{ opacity: 1, y: 0 }}
@@ -43,31 +45,38 @@ export default function CommunitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative p-10 md:p-14 rounded-3xl bg-white/[0.02] backdrop-blur-2xl border border-white/[0.08] hover:border-cyan-500/25 transition-all duration-500 overflow-hidden"
+            className="relative rounded-3xl bg-white/[0.02] backdrop-blur-2xl border border-white/[0.08] hover:border-cyan-500/25 transition-all duration-500 overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px]" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-600/10 rounded-full blur-[60px]" />
-
-            <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
-              <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/20 flex items-center justify-center shrink-0">
-                <Send size={40} className="text-cyan-400" />
+            <div className="grid lg:grid-cols-2">
+              <div className="relative min-h-[280px] lg:min-h-[420px]">
+                <Image
+                  src={SITE_IMAGES.networking}
+                  alt="Traders networking at a professional trading event"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#040816]/80 lg:bg-gradient-to-r lg:from-transparent lg:to-[#040816]" />
               </div>
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl font-bold text-white mb-4">
+
+              <div className="relative z-10 p-10 md:p-14 flex flex-col justify-center">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none" />
+
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                   TradingSmart.ai Community
                 </h3>
-                <div className="grid grid-cols-2 gap-4 mb-8">
+                <p className="text-gray-400 mb-8 leading-relaxed">
+                  Meet traders who think like you — ambitious, curious, and ready to use AI as an edge in the markets.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                   {benefits.map((b) => (
                     <div key={b.text} className="flex items-center gap-2 text-gray-400 text-sm">
-                      <b.icon size={16} className="text-cyan-400" />
+                      <b.icon size={16} className="text-cyan-400 shrink-0" />
                       {b.text}
                     </div>
                   ))}
                 </div>
-                <JoinTelegramButton
-                  label="Join Telegram Now"
-                  variant="filled"
-                />
+                <JoinTelegramButton label="Join Telegram Now" variant="filled" />
               </div>
             </div>
           </motion.div>

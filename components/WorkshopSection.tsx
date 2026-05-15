@@ -1,8 +1,10 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { motionInitial } from '@/components/motion';
 import { CheckCircle2, Lightbulb, Brain, MessageSquareText } from 'lucide-react';
+import { SITE_IMAGES } from '@/lib/site-images';
 
 const days = [
   {
@@ -41,7 +43,7 @@ export default function WorkshopSection() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[150px]" />
 
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-20">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={motionInitial}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,6 +62,41 @@ export default function WorkshopSection() {
             </p>
           </motion.div>
 
+          <motion.div
+            initial={motionInitial}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid lg:grid-cols-2 gap-8 mb-14"
+          >
+            <motion.div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-white/[0.08]">
+              <Image
+                src={SITE_IMAGES.classroom}
+                alt="Interactive classroom workshop with instructor"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#040816]/70 to-transparent" />
+              <p className="absolute bottom-5 left-5 right-5 text-white font-medium">
+                Day-by-day classroom sessions with live Q&A
+              </p>
+            </motion.div>
+            <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-white/[0.08]">
+              <Image
+                src={SITE_IMAGES.forexDemo}
+                alt="Demo account trading practice with mentor"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#040816]/70 to-transparent" />
+              <p className="absolute bottom-5 left-5 right-5 text-white font-medium">
+                Risk-free demo practice before you trade live capital
+              </p>
+            </div>
+          </motion.div>
+
           <div className="grid md:grid-cols-3 gap-6">
             {days.map((d, i) => (
               <motion.div
@@ -72,7 +109,7 @@ export default function WorkshopSection() {
                 className={`relative p-8 rounded-2xl bg-gradient-to-br ${d.color} backdrop-blur-xl border ${d.border} hover:shadow-[0_0_40px_rgba(6,182,212,0.12)] transition-all duration-500`}
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className={`w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center`}>
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
                     <d.icon size={22} className={d.iconColor} />
                   </div>
                   <div>
@@ -88,7 +125,6 @@ export default function WorkshopSection() {
                     </li>
                   ))}
                 </ul>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </motion.div>
             ))}
           </div>

@@ -1,6 +1,8 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import GallerySection from '@/components/GallerySection';
 import StatsSection from '@/components/StatsSection';
+import ExperienceSection from '@/components/ExperienceSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import WorkshopSection from '@/components/WorkshopSection';
 import CommunitySection from '@/components/CommunitySection';
@@ -14,7 +16,9 @@ export default function Home() {
     <main className="min-h-screen bg-[#040816] text-white overflow-x-hidden">
       <Header />
       <HeroSection />
+      <GallerySection />
       <StatsSection />
+      <ExperienceSection />
       <FeaturesSection />
       <WorkshopSection />
       <CommunitySection />

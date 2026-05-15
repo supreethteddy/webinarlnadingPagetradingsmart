@@ -5,6 +5,7 @@ import { motionInitial } from '@/components/motion';
 import { ArrowRight, TrendingUp, Users, Calendar } from 'lucide-react';
 import JoinTelegramButton from '@/components/JoinTelegramButton';
 import Image from 'next/image';
+import { SITE_IMAGES } from '@/lib/site-images';
 
 export default function HeroSection() {
   const scrollTo = (id: string) => {
@@ -62,11 +63,11 @@ export default function HeroSection() {
           >
             <div className="relative rounded-2xl overflow-hidden border border-white/5 shadow-[0_0_60px_rgba(6,182,212,0.15)]">
               <Image
-                src="https://readdy.ai/api/search-image?query=Futuristic%20dark%20AI%20trading%20dashboard%20with%20holographic%20glowing%20cyan%20and%20blue%20stock%20charts%2C%20neon%20market%20data%20visualization%2C%20premium%20fintech%20interface%20design%20on%20deep%20navy%20black%20background%2C%20sleek%20minimal%20high-tech%20aesthetic%2C%208k%20digital%20art%2C%20soft%20glow%20effects%2C%20financial%20technology%20concept%20art&width=1400&height=800&seq=hero1&orientation=landscape"
-                alt="AI Trading Dashboard"
+                src={SITE_IMAGES.traderAtHome}
+                alt="Trader analyzing live charts on laptop"
                 width={1400}
-                height={800}
-                className="w-full h-auto object-cover"
+                height={933}
+                className="w-full h-[320px] sm:h-[400px] lg:h-[520px] object-cover"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#040816]/60 via-transparent to-transparent" />
