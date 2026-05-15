@@ -3,6 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    background-color: #040816;
+  }
+
+  body {
+    background-color: #040816;
+    color: #ffffff;
+  }
+}
+
 @layer components {
   .telegram-cta {
     overflow: hidden;
