@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { ROUTES } from "@/lib/site-config";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import GallerySection from "@/components/GallerySection";
@@ -10,6 +12,12 @@ import RegistrationSection from "@/components/RegistrationSection";
 import SocialProofSection from "@/components/SocialProofSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: ROUTES.home,
+  },
+};
 
 export default function Home() {
   return (

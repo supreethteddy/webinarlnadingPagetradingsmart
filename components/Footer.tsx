@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Send } from "lucide-react";
+import { ROUTES } from "@/lib/site-config";
 
 export default function Footer() {
   return (
@@ -16,9 +18,15 @@ export default function Footer() {
             height={1024}
             className="h-[4.5rem] w-auto max-w-[240px] object-contain bg-transparent"
           />
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm text-center md:text-left">
             &copy; 2026 TradingSmart.ai — AI Trading Webinar Community
           </p>
+          <Link
+            href={ROUTES.partnership}
+            className="text-sm text-violet-300 hover:text-violet-200 transition-colors"
+          >
+            Partner Program
+          </Link>
           <a
             href="https://t.me/+gI80-j0NXJM3N2Fl"
             target="_blank"

@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { motionInitial } from "@/components/motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Handshake } from "lucide-react";
 import JoinTelegramButton from "@/components/JoinTelegramButton";
+import { ROUTES } from "@/lib/site-config";
 
 export default function CTASection() {
   const scrollTo = (id: string) => {
@@ -47,6 +49,14 @@ export default function CTASection() {
             </button>
             <JoinTelegramButton variant="outline" size="lg" />
           </div>
+          <Link
+            href={ROUTES.partnership}
+            className="mt-8 inline-flex items-center gap-2 text-violet-300 hover:text-violet-200 transition-colors text-sm font-medium"
+          >
+            <Handshake size={16} />
+            Build your own trading academy — Partner Program
+            <ArrowRight size={14} />
+          </Link>
         </motion.div>
       </div>
     </section>

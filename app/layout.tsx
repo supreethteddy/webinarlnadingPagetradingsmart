@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { SITE_NAME, SITE_URL, ROUTES } from "@/lib/site-config";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,9 +20,29 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "TradingSmart.ai — AI Trading Education",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — AI Trading Education`,
+    template: `%s | ${SITE_NAME}`,
+  },
   description:
     "Learn Trading in the AI Era. Master market structure, AI workflows, option chains, and risk management with our 3-day premium workshop.",
+  alternates: {
+    canonical: ROUTES.home,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: ROUTES.home,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — AI Trading Education`,
+    description:
+      "Learn Trading in the AI Era. 3-day AI trading workshop with market structure, option chains, and risk management.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export const viewport = {
