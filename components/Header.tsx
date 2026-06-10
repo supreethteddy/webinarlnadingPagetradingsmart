@@ -19,9 +19,9 @@ const HOME_NAV = [
 
 const PARTNER_NAV = [
   { label: "Provide", id: "what-we-provide" },
-  { label: "Plans", id: "partner-plans" },
-  { label: "Process", id: "how-it-works" },
-  { label: "Apply", id: "partner-apply" },
+  { label: "Who It's For", id: "who-is-this-for" },
+  { label: "Advantage", id: "advantage" },
+  { label: "Consult", id: "partner-apply-top" },
 ] as const;
 
 export default function Header() {
@@ -45,8 +45,8 @@ export default function Header() {
   };
 
   const navItems = isPartnership ? PARTNER_NAV : HOME_NAV;
-  const ctaId = isPartnership ? "partner-apply" : "register";
-  const ctaLabel = isPartnership ? "Apply Now" : "Join Workshop";
+  const ctaId = isPartnership ? "partner-apply-top" : "register";
+  const ctaLabel = isPartnership ? "Book Consultation" : "Join Workshop";
 
   return (
     <header
@@ -156,9 +156,7 @@ export default function Header() {
             >
               {isPartnership && item.id === "what-we-provide"
                 ? "What We Provide"
-                : isPartnership && item.id === "how-it-works"
-                  ? "How It Works"
-                  : item.label}
+                : item.label}
             </button>
           ))}
           <button

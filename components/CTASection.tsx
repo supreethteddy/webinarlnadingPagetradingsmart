@@ -54,7 +54,7 @@ export default function CTASection() {
             className="mt-8 inline-flex items-center gap-2 text-violet-300 hover:text-violet-200 transition-colors text-sm font-medium"
           >
             <Handshake size={16} />
-            Build your own trading academy — Partner Program
+            Start your AI-powered stock market education company
             <ArrowRight size={14} />
           </Link>
         </motion.div>

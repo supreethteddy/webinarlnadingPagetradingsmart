@@ -5,18 +5,18 @@ import PartnershipPageContent from "@/components/partnership/PartnershipPageCont
 import { ROUTES, SITE_NAME, SITE_URL } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Partner Program — Launch Your Trading Academy",
+  title: "Start Your AI-Powered Stock Market Education Company",
   description:
-    "Join the TradingSmart.ai Partner Program. Launch your own trading education business with website setup, curriculum, trainers, CRM, marketing support, and revenue sharing on Plans A, B, and C.",
+    "Launch your own branded stock market education business with TradingSmart.ai. Complete ecosystem: website, CRM, curriculum, live training, AI tools, marketing, branding, and sales mentorship.",
   alternates: {
     canonical: ROUTES.partnership,
   },
   openGraph: {
     type: "website",
     url: ROUTES.partnership,
-    title: `Partner Program | ${SITE_NAME}`,
+    title: `AI Stock Market Education Company | ${SITE_NAME}`,
     description:
-      "Build your own trading education brand with complete infrastructure, trainers, and recurring revenue opportunities.",
+      "Start your own AI-powered stock market education company. Powered by TradingSmart.ai — infrastructure, trainers, curriculum, and growth support.",
   },
   robots: {
     index: true,
@@ -27,19 +27,19 @@ export const metadata: Metadata = {
     },
   },
   keywords: [
-    "trading education partner",
-    "stock market franchise India",
-    "trading academy partnership",
-    "TradingSmart.ai partner program",
+    "AI stock market education company",
+    "trading education business India",
+    "stock market education franchise",
+    "TradingSmart.ai partner ecosystem",
   ],
 };
 
 const partnershipJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "TradingSmart.ai Partner Program",
+  name: "Start Your AI-Powered Stock Market Education Company",
   description:
-    "Launch your own trading education business with TradingSmart.ai infrastructure and revenue sharing.",
+    "Launch your own branded stock market education business with the TradingSmart.ai partner ecosystem.",
   url: `${SITE_URL}${ROUTES.partnership}`,
   isPartOf: {
     "@type": "WebSite",
@@ -58,7 +58,7 @@ const partnershipJsonLd = {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Partner Program",
+        name: "Partner Ecosystem",
         item: `${SITE_URL}${ROUTES.partnership}`,
       },
     ],

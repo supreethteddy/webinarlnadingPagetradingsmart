@@ -11,31 +11,41 @@ export default function Footer() {
       <div className="absolute inset-0 bg-[#040816]" />
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-20">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <Image
-            src="/tradingsmart-logo.png"
-            alt="TradingSmart.ai"
-            width={1024}
-            height={1024}
-            className="h-[4.5rem] w-auto max-w-[240px] object-contain bg-transparent"
-          />
+          <Link href={ROUTES.home} aria-label="TradingSmart.ai home">
+            <Image
+              src="/tradingsmart-logo.png"
+              alt="TradingSmart.ai"
+              width={1024}
+              height={1024}
+              className="h-[4.5rem] w-auto max-w-[240px] object-contain bg-transparent"
+            />
+          </Link>
           <p className="text-gray-500 text-sm text-center md:text-left">
             &copy; 2026 TradingSmart.ai — AI Trading Webinar Community
           </p>
-          <Link
-            href={ROUTES.partnership}
-            className="text-sm text-violet-300 hover:text-violet-200 transition-colors"
-          >
-            Partner Program
-          </Link>
-          <a
-            href="https://t.me/+gI80-j0NXJM3N2Fl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
-          >
-            <Send size={16} />
-            Telegram
-          </a>
+          <nav className="flex flex-wrap items-center justify-center gap-5">
+            <Link
+              href={ROUTES.home}
+              className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+            >
+              Workshop
+            </Link>
+            <Link
+              href={ROUTES.partnership}
+              className="text-sm text-violet-300 hover:text-violet-200 transition-colors"
+            >
+              Partner Program
+            </Link>
+            <a
+              href="https://t.me/+gI80-j0NXJM3N2Fl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+            >
+              <Send size={16} />
+              Telegram
+            </a>
+          </nav>
         </div>
       </div>
     </footer>
