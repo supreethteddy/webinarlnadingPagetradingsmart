@@ -26,7 +26,10 @@ export default function ExperienceSection() {
                   : ""
               }`}
             >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-cyan-500/15 shadow-[0_0_60px_rgba(6,182,212,0.12)]">
+              <div
+                className="img-fill-wrap relative aspect-[4/3] rounded-3xl overflow-hidden border border-cyan-500/15 shadow-[0_0_60px_rgba(6,182,212,0.12)]"
+                style={{ position: "relative", overflow: "hidden" }}
+              >
                 <Image
                   src={story.image}
                   alt={story.alt}

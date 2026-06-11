@@ -75,7 +75,10 @@ export default function WorkshopSection() {
             transition={{ duration: 0.6 }}
             className="grid lg:grid-cols-2 gap-8 mb-14"
           >
-            <motion.div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-cyan-500/15">
+            <div
+              className="img-fill-wrap relative aspect-[16/10] rounded-3xl overflow-hidden border border-cyan-500/15"
+              style={{ position: "relative", overflow: "hidden" }}
+            >
               <Image
                 src={SITE_IMAGES.classroom}
                 alt="Interactive classroom workshop with instructor"
@@ -87,8 +90,11 @@ export default function WorkshopSection() {
               <p className="absolute bottom-5 left-5 right-5 text-white font-medium">
                 Day-by-day classroom sessions with live Q&A
               </p>
-            </motion.div>
-            <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-cyan-500/15">
+            </div>
+            <div
+              className="img-fill-wrap relative aspect-[16/10] rounded-3xl overflow-hidden border border-cyan-500/15"
+              style={{ position: "relative", overflow: "hidden" }}
+            >
               <Image
                 src={SITE_IMAGES.forexDemo}
                 alt="Demo account trading practice with mentor"

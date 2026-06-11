@@ -49,7 +49,10 @@ export default function CommunitySection() {
             className="relative rounded-3xl bg-[#0a0f24]/90 border border-cyan-500/15 hover:border-cyan-500/25 transition-all duration-500 overflow-hidden"
           >
             <div className="grid lg:grid-cols-2">
-              <div className="relative min-h-[280px] lg:min-h-[420px]">
+              <div
+                className="img-fill-wrap relative min-h-[280px] lg:min-h-[420px]"
+                style={{ position: "relative", overflow: "hidden" }}
+              >
                 <Image
                   src={SITE_IMAGES.networking}
                   alt="Traders networking at a professional trading event"

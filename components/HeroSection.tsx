@@ -110,8 +110,8 @@ export default function HeroSection() {
 
               {/* Primary — AI robot */}
               <div
-                className="relative aspect-[4/3] sm:aspect-[16/10] rounded-2xl md:rounded-3xl overflow-hidden border border-violet-500/30 shadow-[0_0_80px_rgba(139,92,246,0.25)] bg-[#061024]"
-                style={{ backgroundColor: "#061024" }}
+                className="img-fill-wrap relative aspect-[4/3] sm:aspect-[16/10] rounded-2xl md:rounded-3xl overflow-hidden border border-violet-500/30 shadow-[0_0_80px_rgba(139,92,246,0.25)] bg-[#061024]"
+                style={{ backgroundColor: "#061024", position: "relative", overflow: "hidden" }}
               >
                 <Image
                   src={SITE_IMAGES.heroRobot}
@@ -138,8 +138,8 @@ export default function HeroSection() {
 
               {/* Secondary — collaboration scene */}
               <div
-                className="absolute -bottom-6 -left-2 sm:-left-6 w-[42%] sm:w-[38%] max-w-[220px] aspect-[4/5] rounded-xl overflow-hidden border-2 border-[#040816] shadow-[0_20px_50px_rgba(0,0,0,0.5)] ring-2 ring-cyan-500/30 bg-[#061024] rotate-[-3deg] hover:rotate-0 transition-transform duration-500"
-                style={{ backgroundColor: "#061024" }}
+                className="img-fill-wrap absolute -bottom-6 -left-2 sm:-left-6 w-[42%] sm:w-[38%] max-w-[220px] aspect-[4/5] rounded-xl overflow-hidden border-2 border-[#040816] shadow-[0_20px_50px_rgba(0,0,0,0.5)] ring-2 ring-cyan-500/30 bg-[#061024] rotate-[-3deg] hover:rotate-0 transition-transform duration-500"
+                style={{ backgroundColor: "#061024", position: "absolute", overflow: "hidden" }}
               >
                 <Image
                   src={SITE_IMAGES.heroAiTrading}

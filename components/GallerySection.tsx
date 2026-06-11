@@ -17,8 +17,8 @@ export default function GallerySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="max-w-7xl mx-auto relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[620px] rounded-3xl overflow-hidden border border-cyan-500/15 shadow-[0_0_80px_rgba(6,182,212,0.12)] bg-[#040816]"
-          style={{ backgroundColor: "#040816" }}
+          className="img-fill-wrap max-w-7xl mx-auto relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[620px] rounded-3xl overflow-hidden border border-cyan-500/15 shadow-[0_0_80px_rgba(6,182,212,0.12)] bg-[#040816]"
+          style={{ backgroundColor: "#040816", position: "relative", overflow: "hidden" }}
         >
           <Image
             src={SITE_IMAGES.galleryBanner}

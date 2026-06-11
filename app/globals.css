@@ -20,6 +20,12 @@
   }
 }
 
+/* Contain Next.js fill images even if utility classes fail to load */
+.img-fill-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
 @layer components {
   .telegram-cta {
     overflow: hidden;

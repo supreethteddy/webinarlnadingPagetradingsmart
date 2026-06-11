@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { SITE_NAME, SITE_URL, ROUTES } from "@/lib/site-config";
+import { MetaPixelScript } from "@/components/MetaPixel";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -66,6 +67,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased bg-[#040816] text-white min-h-screen`}
         style={{ backgroundColor: "#040816", color: "#ffffff" }}
       >
+        <MetaPixelScript />
         {children}
       </body>
     </html>
